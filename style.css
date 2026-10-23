@@ -5,6 +5,11 @@
     padding-top: 200px;
 }
 
+#circle-title {
+    display: flex;
+    justify-self: center;
+}
+
 .circle{
     background-color: rgb(255, 0, 0);
     height: 200px;
