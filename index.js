@@ -24,6 +24,8 @@ class Circle {
         this.element.style.backgroundColor = `rgb(${this.red}, ${this.green}, ${this.blue})`;
         console
     }
+
+    // TODO create an array of how the colour changing process should go, and change the "change red" to function for the colour input
 }
 
 const circleElement = document.querySelector(".circle");
