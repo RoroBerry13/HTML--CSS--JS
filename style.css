@@ -1,3 +1,10 @@
+#circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+
 .circle{
     background-color: rgb(255, 0, 0);
     height: 200px;
