@@ -9,12 +9,13 @@ class Circle {
         this.element = element
         this.width = element.style.width;
         this.height = element.style.height;
-        this.rgb = this.getColour();
+        this.rgb = this.getColour(); // TODO change rgb variables to dictionary
         this.red = this.rgb[0];
         this.green = this.rgb[1];
         this.blue = this.rgb[2];
-        this.checkOperation()
-        this.checkColour()
+        this.checkOperation();
+        this.checkColour();
+        this.setCurrentColourValue();
     }
 
     getColour() {
@@ -29,10 +30,7 @@ class Circle {
     // Click function
     clickFunction() {
         // declare the current operation to preform and what colour needs to change
-        let chaItem = CHANGE_HUE_ARRAY[arrayIndex]; //CHA => Change Hue Array
-
-
-
+        let chaItem = CHANGE_HUE_ARRAY[arrayIndex]; //chaItem => Change Hue Array Item
         console.log(chaItem);
         this.changeRed();
     }
@@ -59,8 +57,20 @@ class Circle {
         console.log(currentColour);
     }
 
+    setCurrentColourValue() {
+        if (currentColour == 'red') {
+            currentColourValue = Number(this.red);
+        } else if (currentColour == 'green') {
+            currentColourValue = Number(this.green);
+        } else {
+            currentColourValue = Number(this.blue);
+        }
+        console.log(currentColourValue);
+    }
 
+    increaseColourValue() {
 
+    }
 
 
     changeRed() {
@@ -77,24 +87,4 @@ class Circle {
 
 const circleElement = document.querySelector(".circle");
 const circle = new Circle(circleElement);
-circle.element.addEventListener('click', ()=> {circle.clickFunction()});
-
-
-
-
-
-
-
-
-
-/**
- * MY PSEUDO CODE
- * 
- * DECLARE ARRAY OF ORDER OF COLOUR CHANGES
- * 
- * LOOP THROUGH ARRAY, EACH PROCESS FINISHES BEFORE MOVING ON TO THE NEXT
- * 
- * IF + IN THE STRING INCREASE THE VALUE OF THE COLOUR
- * 
- * ELSE REDUCE THE VALUE OF THE COLOUR
- */
+circle.element.addEventListener('click', () => { circle.clickFunction() });
